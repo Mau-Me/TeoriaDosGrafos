@@ -1,7 +1,7 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,c
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,c
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,c,codeblocks
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,c,codeblocks
 
 ### C ###
 # Prerequisites
@@ -57,6 +57,14 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+### CodeBlocks ###
+# specific to CodeBlocks IDE
+*.layout
+*.depend
+# generated directories
+bin/
+obj/
+
 ### Linux ###
 *~
 
@@ -83,7 +91,7 @@ dkms.conf
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,c
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,c,codeblocks
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
