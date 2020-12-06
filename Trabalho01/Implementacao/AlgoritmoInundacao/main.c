@@ -2,6 +2,14 @@
 
 int main()
 {
-    printf("Hello world!\n");
+    Vertice vertices[TamMatriz];
+
+    lerMatriz(vertices);
+    imprimeMatriz(vertices);
+
+    inundacao(vertices, 0);
+
+    tipoGrafo(vertices);
+
     return 0;
 }

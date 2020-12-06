@@ -6,7 +6,7 @@
 #ifndef MATRIZADJACENCIAS_H_INCLUDED
 #define MATRIZADJACENCIAS_H_INCLUDED
 
-#define TamMatriz 2
+#define TamMatriz 3
 
 typedef struct vertice {
     char nomeVertice;
@@ -17,6 +17,8 @@ typedef struct vertice {
 void lerMatriz(Vertice vertices[TamMatriz]);
 void imprimeMatriz(Vertice vertices[TamMatriz]);
 void inundacao(Vertice matriz[TamMatriz], int vertice);
+bool listaVazia(int lista[TamMatriz]);
+void inicializaLista(int lista[TamMatriz]);
 void tipoGrafo(Vertice matriz[TamMatriz]); // Indica se grafo é Conexo ou Desconexo
 
 

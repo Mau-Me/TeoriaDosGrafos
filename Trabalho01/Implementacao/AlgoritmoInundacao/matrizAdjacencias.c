@@ -40,8 +40,56 @@ void imprimeMatriz(Vertice vertices[TamMatriz]){
     }
 }
 
-void inundacao(Vertice matriz[TamMatriz], int vertice){
+void inundacao(Vertice vertices[TamMatriz], int vertice){
+    int listaVerticeInundacao[TamMatriz];
+    int indiceLista, cont;
+
+    indiceLista = cont = 0;
+
+    inicializaLista(listaVerticeInundacao);
+
+    listaVerticeInundacao[cont] = vertice;
+    vertices[cont].flagInundado=true;
+    cont++;
+
+    while(!listaVazia(listaVerticeInundacao)){
+        for(int i = 0; i<TamMatriz; i++){
+            if(vertices[cont].adjacencias[i]==1 && vertices[cont].flagInundado==false){
+                listaVerticeInundacao[cont]=i;
+                vertices[cont].flagInundado=true;
+                cont++;
+            }
+        }
+        listaVerticeInundacao[indiceLista] = -1;
+        indiceLista++;
+    }
+
+    for(int i=0; i<TamMatriz; i++){
+        printf("%c\t%d\n", vertices[i].nomeVertice, vertices[i].flagInundado);
+    }
 }
 
-void tipoGrafo(Vertice matriz[TamMatriz]){
+bool listaVazia(int lista[TamMatriz]){
+    for(int i=0; i<TamMatriz; i++){
+        if(lista[i]!=-1){
+            return false;
+        }
+    }
+    return true;
+}
+
+void inicializaLista(int lista[TamMatriz]){
+    for(int i=0; i<TamMatriz; i++){
+        lista[i]=-1;
+    }
+}
+
+void tipoGrafo(Vertice vertices[TamMatriz]){
+    for(int i=0; i<TamMatriz; i++){
+        if(vertices[i].flagInundado==false){
+            printf("\n\nGrafo Desconexo\n\n");
+            return;
+        }
+    }
+    printf("\n\nGrafo Conexo\n\n");
 }
