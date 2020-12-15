@@ -6,15 +6,20 @@
 #ifndef MATRIZADJACENCIAS_H_INCLUDED
 #define MATRIZADJACENCIAS_H_INCLUDED
 
-#define TamMatriz 3
+#define TamMatriz 3 /*Definição do tamanho da matriz*/
 
 typedef struct vertice {
+/*Estrutura para armazenamento do vertice
+  Com nome, flag de controle e ponteiro para suas adjacencias
+*/
     char nomeVertice;
     bool flagInundado;
     bool *adjacencias;
 } Vertice;
 
+/*Definição das funções*/
 void lerMatriz(Vertice vertices[TamMatriz]);
+bool matrizConsistente(Vertice vertices[TamMatriz]);
 void imprimeMatriz(Vertice vertices[TamMatriz]);
 void inundacao(Vertice matriz[TamMatriz], int vertice);
 bool listaVazia(int lista[TamMatriz]);
